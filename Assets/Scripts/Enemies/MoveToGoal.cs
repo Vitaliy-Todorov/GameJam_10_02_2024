@@ -1,18 +1,17 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class MoveToGoal : MonoBehaviour
 {
     [SerializeField] 
-    private Transform _target;
+    private PlayerMovement _target;
     [SerializeField] 
     private float _agraRadius;
     [SerializeField] 
     private float _maxAgraRadius;
 
     private bool _agra;
-    
+
     private NavMeshAgent _agent;
 
     private void Awake()
@@ -24,10 +23,10 @@ public class MoveToGoal : MonoBehaviour
 
     private void Update()
     {
-        if (_target == null)
+        if (_target == null || !_target.IsRunning)
             return;
         
-        Vector2 distanceToTarget = _target.position - transform.position;
+        Vector2 distanceToTarget = _target.transform.position - transform.position;
         if (!_agra && distanceToTarget.magnitude > _agraRadius)
             return;
 
@@ -39,6 +38,6 @@ public class MoveToGoal : MonoBehaviour
             return;
         }
 
-        _agent.SetDestination(_target.position);
+        _agent.SetDestination(_target.transform.position);
     }
 }
