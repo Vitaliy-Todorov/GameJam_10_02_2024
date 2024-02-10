@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
-        _itemHolders= new List<ItemHolder>();
+        _itemHolders = new List<ItemHolder>();
         _playerInput.onActionTriggered += OnActionTriggered;
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -27,7 +27,8 @@ public class PlayerController : MonoBehaviour
                 Move(action.ReadValue<Vector2>());
                 break;
             case "Interaction":
-                Interaction();
+                if (context.performed)
+                    Interaction();
                 break;
         }
     }
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
     private void Move(Vector2 direction)
     {
         _rb.velocity = direction.normalized * _speed;
-        if (_itemHolders.Count > 0 )
+        if (_itemHolders.Count > 0)
         {
             ShowNearestItemMessage();
         }
