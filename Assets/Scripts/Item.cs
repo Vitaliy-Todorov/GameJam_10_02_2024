@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Item : MonoBehaviour
+[CreateAssetMenu(fileName = "NewItem", menuName = "ScriptableObject/Item")]
+public class Item : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string title; //Название предмета для диалогового окна
+    [TextArea] public string message; //Сообщение для игрока
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Image uiImage; //Если будем выводить картинку на UI
 }
