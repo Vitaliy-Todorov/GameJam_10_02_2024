@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -76,17 +75,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void AddHolder(ItemHolder itemHolder)
-    {
-        _itemHolders.Add(itemHolder);
-    }
-
-    public void RemoveHolder(ItemHolder itemHolder)
-    {
-        itemHolder.HideMessage();
-        _itemHolders.Remove(itemHolder);
-    }
-
     private void ShowNearestItemMessage()
     {
         ItemHolder nearestHolder = SelectNearestHolder();
@@ -95,5 +83,22 @@ public class PlayerController : MonoBehaviour
             holder.HideMessage();
         }
         nearestHolder.ShowMessage();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out ItemHolder holder))
+        {
+            _itemHolders.Add(holder);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out ItemHolder holder))
+        {
+            holder.HideMessage();
+            _itemHolders.Remove(holder);
+        }
     }
 }

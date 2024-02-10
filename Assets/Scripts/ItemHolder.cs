@@ -7,23 +7,6 @@ public class ItemHolder : MonoBehaviour
 
     public Item item;
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out PlayerController player))
-        {
-            player.AddHolder(this);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out PlayerController player))
-        {
-            player.RemoveHolder(this);
-        }
-    }
-
     public void ShowMessage()
     {
         _message.SetActive(true);
