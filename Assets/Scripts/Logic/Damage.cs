@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Damage : MonoBehaviour
@@ -8,10 +6,7 @@ public class Damage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.TryGetComponent(out Health health))
-        {
+        if (col.gameObject.TryGetComponent(out Health health)) 
             health.TakeDamage(_damage);
-            // Destroy(gameObject);
-        }
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,23 +13,15 @@ public class GameOverMenu : MonoBehaviour
         _exit.onClick.AddListener(Exit);
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() => 
         Time.timeScale = 0;
-    }
 
-    private void Restart()
-    {
-        SceneManager.LoadScene("Vitaliy");
-    }
-
-    private void Exit()
-    {
-        Application.Quit();
-    }
-
-    private void OnDisable()
-    {
+    private void OnDisable() => 
         Time.timeScale = 1;
-    }
+
+    private void Restart() => 
+        SceneManager.LoadScene("Vitaliy");
+
+    private void Exit() => 
+        Application.Quit();
 }
