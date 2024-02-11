@@ -6,14 +6,17 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput _playerInput;
+    [SerializeField] private Animator _animator;
+
     [SerializeField] private float _speed;
+    [SerializeField] private float _runningSpeed;
 
     private Rigidbody2D _rb;
-    private List<ItemHolder> _itemHolders;
+
+    private float _currentSpeed;
 
     private void Awake()
     {
-        _itemHolders = new List<ItemHolder>();
         _playerInput.onActionTriggered += OnActionTriggered;
         _rb = GetComponent<Rigidbody2D>();
     }
@@ -26,80 +29,42 @@ public class PlayerController : MonoBehaviour
             case "Move":
                 Move(action.ReadValue<Vector2>());
                 break;
-            case "Interaction":
-                if (context.performed)
-                    Interaction();
-                break;
         }
     }
 
     private void Move(Vector2 direction)
     {
-        _rb.velocity = direction.normalized * _speed;
-        if (_itemHolders.Count > 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            ShowNearestItemMessage();
-        }
-    }
-
-    private ItemHolder SelectNearestHolder()
-    {
-        if (_itemHolders.Count > 0)
-        {
-            ItemHolder nearest = _itemHolders[0];
-            float distance = Vector2.Distance(nearest.transform.position, transform.position);
-
-            foreach (var holder in _itemHolders)
-            {
-                float currentDistance = Vector2.Distance(holder.transform.position, transform.position);
-                if (distance > currentDistance)
-                {
-                    nearest = holder;
-                    distance = currentDistance;
-                }
-            }
-            return nearest;
+            _currentSpeed = _runningSpeed;
         }
         else
         {
-            return null;
+            _currentSpeed = _speed;
         }
-    }
 
-    private void Interaction()
-    {
-        ItemHolder nearestHolder = SelectNearestHolder();
+        _rb.velocity = direction.normalized * _currentSpeed;
 
-        if (nearestHolder != null)
+        if (_animator != null)
         {
-            Debug.Log("ItemMessage: Name=" + nearestHolder.item.title + " message=" + nearestHolder.item.message);
+            WalkAnimation(direction);
         }
     }
 
-    private void ShowNearestItemMessage()
+    private void WalkAnimation(Vector2 direction)
     {
-        ItemHolder nearestHolder = SelectNearestHolder();
-        foreach (var holder in _itemHolders)
-        {
-            holder.HideMessage();
-        }
-        nearestHolder.ShowMessage();
+        if (direction.y > Mathf.Abs(direction.x))
+            _animator.Play("Up");
+        else if (Mathf.Abs(direction.y) > Mathf.Abs(direction.x))
+            _animator.Play("Bottom");
+        else if (direction.x > 0)
+            _animator.Play("Right");
+        else if (direction.x < 0)
+            _animator.Play("Left");
+        else
+            _animator.Play("Stand");
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out ItemHolder holder))
-        {
-            _itemHolders.Add(holder);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent(out ItemHolder holder))
-        {
-            holder.HideMessage();
-            _itemHolders.Remove(holder);
-        }
-    }
+    private void RunningAnimation(Vector2 moveTo) =>
+        WalkAnimation(moveTo);
 }
