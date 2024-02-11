@@ -20,7 +20,7 @@ public class GameOverMenu : MonoBehaviour
         Time.timeScale = 1;
 
     private void Restart() => 
-        SceneManager.LoadScene("Vitaliy");
+        SceneManager.LoadScene("Main");
 
     private void Exit() => 
         Application.Quit();
