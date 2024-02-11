@@ -5,12 +5,14 @@ using UnityEngine.InputSystem;
 
 public class Hand : MonoBehaviour
 {
+    [SerializeField] private Message _message;
     [SerializeField] private PlayerInput _playerInput;
 
     private List<ItemHolder> _itemHolders;
 
     private void Awake()
     {
+        _message.gameObject.SetActive(false);
         _itemHolders = new List<ItemHolder>();
         _playerInput.onActionTriggered += OnActionTriggered;
     }
@@ -67,7 +69,8 @@ public class Hand : MonoBehaviour
 
         if (nearestHolder != null)
         {
-            Debug.Log("ItemMessage: Name=" + nearestHolder.item.title + " message=" + nearestHolder.item.message);
+            _message.Send(nearestHolder.item.title, nearestHolder.item.message);
+            _message.gameObject.SetActive(true);
         }
     }
 
@@ -94,6 +97,7 @@ public class Hand : MonoBehaviour
         if (collision.TryGetComponent(out ItemHolder holder))
         {
             holder.HideMessage();
+            _message.gameObject.SetActive(false);
             _itemHolders.Remove(holder);
         }
     }
