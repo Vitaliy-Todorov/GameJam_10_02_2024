@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8caecd1d46e2b7345bc899035dd9f544, type: 3}
-  m_Name: Green
+  m_Name: Knife
   m_EditorClassIdentifier: 
-  title: Green
-  message: I'm green!
+  title: Knife
+  message: " - \u043A\u0430\u043A \u0443\u0434\u043E\u0431\u043D\u043E \u043E\u043D
+    \u043B\u0435\u0436\u0438\u0442 \u0432 \u0440\u0443\u043A\u0435\u2026\u043A\u0430\u043A
+    \u0441\u0442\u0440\u0430\u043D\u043D\u043E\u2026\r\n\u043A\u0430\u043A \u0437\u043D\u0430\u043A\u043E\u043C\u043E..."
   uiImage: {fileID: 0}
