@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] 
+    [SerializeField]
     private Rigidbody2D _rigidbody;
-    [SerializeField] 
+    [SerializeField]
     private float _speed;
-    [SerializeField] 
+    [SerializeField]
     private float _runningSpeed;
-    
-    [SerializeField, Space] 
+
+    [SerializeField, Space]
     private Animator _animator;
-    
+
     public bool IsRunning { get; private set; }
 
     void Update()
@@ -23,13 +23,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            RunningAnimation(moveTo);
+            if (_animator != null)
+            {
+                RunningAnimation(moveTo);
+            }
             _rigidbody.velocity = moveTo * _runningSpeed;
             IsRunning = true;
         }
         else
         {
-            WalkAnimation(moveTo);
+            if (_animator != null)
+            {
+                WalkAnimation(moveTo);
+            }
             _rigidbody.velocity = moveTo * _speed;
             IsRunning = false;
         }
@@ -49,6 +55,6 @@ public class PlayerMovement : MonoBehaviour
             _animator.Play("Stand");
     }
 
-    private void RunningAnimation(Vector2 moveTo) => 
+    private void RunningAnimation(Vector2 moveTo) =>
         WalkAnimation(moveTo);
 }
