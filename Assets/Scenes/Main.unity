@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 47519595}
   - component: {fileID: 47519596}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 9
   m_Sprite: {fileID: 21300000, guid: 89b3e7241deb0f146862737f0285accc, type: 3}
-  m_Color: {r: 0.11151922, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 74427260}
   - component: {fileID: 74427259}
   - component: {fileID: 74427258}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -500,7 +500,7 @@ GameObject:
   - component: {fileID: 97681832}
   - component: {fileID: 97681831}
   - component: {fileID: 97681830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 111043812}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +682,7 @@ GameObject:
   - component: {fileID: 116372263}
   - component: {fileID: 116372262}
   - component: {fileID: 116372261}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 228857440}
   - component: {fileID: 228857439}
   - component: {fileID: 228857438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 229337797}
   - component: {fileID: 229337796}
   - component: {fileID: 229337795}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1133,6 +1133,114 @@ Transform:
   - {fileID: 1570871328}
   m_Father: {fileID: 1649489615}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &273364727
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 273364728}
+  - component: {fileID: 273364729}
+  - component: {fileID: 273364730}
+  m_Layer: 7
+  m_Name: AreaAnger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &273364728
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273364727}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1952995400}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &273364729
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273364727}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!114 &273364730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273364727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3296632dd1564eecaf227687e4dc6d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rootNode:
+    rid: 7647114885082906625
+  _currentNode:
+    rid: 7647114885082906625
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 7647114885082906625
+      type: {class: Vision, ns: , asm: Assembly-CSharp}
+      data:
+        _agent: {fileID: 1952995402}
+        _agraRadius: 6
+        _maxAgraRadius: 8
+        _nextNod:
+          rid: 7647114885082906631
+        _transform: {fileID: 1952995400}
+        _distance: 7
+    - rid: 7647114885082906631
+      type: {class: Hearing, ns: , asm: Assembly-CSharp}
+      data:
+        _agent: {fileID: 1952995402}
+        _agraRadius: 10
+        _maxAgraRadius: 13
+        _nextNod:
+          rid: -2
+        _player: {fileID: 7495046510183652006}
 --- !u!1 &334273019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,7 +1325,7 @@ GameObject:
   - component: {fileID: 391672782}
   - component: {fileID: 391672781}
   - component: {fileID: 391672780}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1505,7 +1613,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
@@ -1515,14 +1622,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1680,7 +1779,7 @@ GameObject:
   - component: {fileID: 546348669}
   - component: {fileID: 546348668}
   - component: {fileID: 546348667}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1826,7 +1925,7 @@ GameObject:
   - component: {fileID: 557660384}
   - component: {fileID: 557660386}
   - component: {fileID: 557660385}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: KnifeItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1911,7 +2010,7 @@ GameObject:
   - component: {fileID: 584668571}
   - component: {fileID: 584668570}
   - component: {fileID: 584668569}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2137,7 +2236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 638125328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2174,7 +2273,7 @@ GameObject:
   - component: {fileID: 638832077}
   - component: {fileID: 638832076}
   - component: {fileID: 638832075}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BearItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2259,7 +2358,7 @@ GameObject:
   - component: {fileID: 752667726}
   - component: {fileID: 752667725}
   - component: {fileID: 752667724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2498,7 +2597,7 @@ GameObject:
   - component: {fileID: 822971584}
   - component: {fileID: 822971583}
   - component: {fileID: 822971582}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5378,7 +5477,7 @@ GameObject:
   - component: {fileID: 1145131439}
   - component: {fileID: 1145131438}
   - component: {fileID: 1145131437}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5659,7 +5758,7 @@ GameObject:
   - component: {fileID: 1153476488}
   - component: {fileID: 1153476487}
   - component: {fileID: 1153476486}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5794,6 +5893,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &1164528688 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7904682704203545880, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+  m_PrefabInstance: {fileID: 1952995399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1179017586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,7 +5908,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179017587}
   - component: {fileID: 1179017588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5890,7 +5994,7 @@ GameObject:
   - component: {fileID: 1248689755}
   - component: {fileID: 1248689754}
   - component: {fileID: 1248689753}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6037,7 +6141,7 @@ GameObject:
   - component: {fileID: 1284898939}
   - component: {fileID: 1284898938}
   - component: {fileID: 1284898937}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6249,7 +6353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310425198}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6287,7 +6391,7 @@ GameObject:
   - component: {fileID: 1354103703}
   - component: {fileID: 1354103702}
   - component: {fileID: 1354103701}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6512,7 +6616,7 @@ GameObject:
   - component: {fileID: 1397414049}
   - component: {fileID: 1397414051}
   - component: {fileID: 1397414050}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6652,7 +6756,7 @@ GameObject:
   - component: {fileID: 1511204829}
   - component: {fileID: 1511204828}
   - component: {fileID: 1511204827}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6798,7 +6902,7 @@ GameObject:
   - component: {fileID: 1569570311}
   - component: {fileID: 1569570313}
   - component: {fileID: 1569570312}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6973,7 +7077,7 @@ GameObject:
   - component: {fileID: 1579647366}
   - component: {fileID: 1579647365}
   - component: {fileID: 1579647364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7155,6 +7259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu
       objectReference: {fileID: 0}
+    - target: {fileID: 1855776840588362483, guid: b57c040d8adf1f744b2b0e5063b9e622, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8506149021862516512, guid: b57c040d8adf1f744b2b0e5063b9e622, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -7260,7 +7368,7 @@ GameObject:
   - component: {fileID: 1694245120}
   - component: {fileID: 1694245119}
   - component: {fileID: 1694245121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7406,7 +7514,7 @@ GameObject:
   - component: {fileID: 1714600459}
   - component: {fileID: 1714600458}
   - component: {fileID: 1714600457}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SymbolItemHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7489,7 +7597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871882712}
   - component: {fileID: 1871882711}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7575,21 +7683,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eye
       objectReference: {fileID: 0}
+    - target: {fileID: 2926487129110860124, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784130712955455889, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784130712955455889, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5784130712955455889, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35
+      value: 0.79
       objectReference: {fileID: 0}
+    - target: {fileID: 5812480605129261608, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 7495046510183652006}
     - target: {fileID: 5812480605129261608, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
       propertyPath: _target
       value: 
-      objectReference: {fileID: 7495046510183652006}
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.42
+      value: 12.95
       objectReference: {fileID: 0}
     - target: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.57
       objectReference: {fileID: 0}
     - target: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7623,14 +7755,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6872158644909599815, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8302820688659728965, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5812480605129261608, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 273364728}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
 --- !u!4 &1952995400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6728605193622912926, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
+  m_PrefabInstance: {fileID: 1952995399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &1952995402 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 6908023209248911336, guid: 1a061e9974a29874f8d6acf833a7a1e6, type: 3}
   m_PrefabInstance: {fileID: 1952995399}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1996315943
@@ -7649,7 +7798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1996315944
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7729,7 +7878,7 @@ GameObject:
   - component: {fileID: 2009255362}
   - component: {fileID: 2009255361}
   - component: {fileID: 2009255360}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7831,7 +7980,7 @@ GameObject:
   - component: {fileID: 2011052091}
   - component: {fileID: 2011052090}
   - component: {fileID: 2011052089}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7996,7 +8145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSources:
-  - {fileID: 0}
+  - {fileID: 1164528688}
 --- !u!4 &2025412415
 Transform:
   m_ObjectHideFlags: 0
@@ -8023,7 +8172,7 @@ GameObject:
   - component: {fileID: 2041548115}
   - component: {fileID: 2041548117}
   - component: {fileID: 2041548116}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8158,7 +8307,7 @@ GameObject:
   - component: {fileID: 2082459153}
   - component: {fileID: 2082459152}
   - component: {fileID: 2082459151}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Obstacle (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

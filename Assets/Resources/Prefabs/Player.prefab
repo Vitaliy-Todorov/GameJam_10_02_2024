@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 4459382482127811708}
   - component: {fileID: 3029913951829817179}
   - component: {fileID: 3809274785736565199}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2560910290078077562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 8128527357674239025}
   - component: {fileID: 1400604536298047201}
   - component: {fileID: 3652470694232363749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4167884930299306990}
   - component: {fileID: 8243332086217623221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5676154559559239292}
   - component: {fileID: 4247912845517388639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
