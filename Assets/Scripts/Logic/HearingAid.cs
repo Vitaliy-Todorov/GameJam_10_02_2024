@@ -22,18 +22,34 @@ public class HearingAid : MonoBehaviour
     {
         while (true)
         {
-            if (Input.GetKey(KeyCode.Space) && _value < 1)
+            if (Input.GetKey(KeyCode.Space))
             {
-                _value += 0.005f;
+                if(_value < 1)
+                {
+                    if(_value < _minValue)
+                        _value = _minValue;
+                    
+                    _value += .001f;
+                    _audioManager.SetValue(_value);
+                }
+            }
+            else
+            {
+                _value = 0;
+                _audioManager.SetValue(_value);
+            }
+            /*if (Input.GetKey(KeyCode.Space) && _value < 1)
+            {
+                _value += 1f * Time.deltaTime;
                 _audioManager.SetValue(_value);
                 _audioManager.SetBlend(_value);
             }
             else if(_value > _minValue)
             {
-                _value -= 0.005f;
+                _value -= 1f * Time.deltaTime;
                 _audioManager.SetValue(_value);
                 _audioManager.SetBlend(_value);
-            }
+            }*/
             
             yield return new WaitForSeconds(.1f);
         }
